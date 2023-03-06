@@ -1,5 +1,22 @@
 import mysql.connector
 
+from dotenv import load_dotenv
+from os import getenv
+
+
+# This function loads the environment variables from the .env file, will return in following order: host, user, password, database
+def load_virtual_env():
+
+    load_dotenv()
+
+    host = getenv('DB_HOST')
+    user = getenv('DB_USER')
+    password = getenv('DB_PASSWORD')
+    database = getenv('DB_DATABASE')
+    
+    return host, user, password, database
+
+
 class Connection:
     def __init__(self, host, user, password, database):
         self.host = host
@@ -31,10 +48,21 @@ class Connection:
             
     def execute(self, query):
         try:
-            self.cursor.execute(query)
+            self.cursor.execute("".join(query), multi=True)
             self.connection.commit()
             print('Query executed')
         except Exception as e:
             print('Query not executed', e)
             
 # Path: sys\database\database.py
+
+if __name__ == "__main__":
+    
+    host, user, password, database = load_virtual_env()
+    
+    print(host, user, password, database)
+    
+    
+    db = Connection(host, user, password, database)
+    db.connect()
+    db.execute(f"use {database};  SELECT * FROM STATUS;")

@@ -1,14 +1,7 @@
-from sys.database.connection import Connection
-from dotenv import load_dotenv
-from os import getenv
+from sys.database.connection import Connection, load_virtual_env
 
-load_dotenv()
-
-host = getenv('DB_HOST')
-user = getenv('DB_USER')
-password = getenv('DB_PASSWORD')
-database = getenv('DB_DATABASE')
-
+host, user, password, database = load_virtual_env()
+print(host, user, password, database)
 # CRUD
 class Service:
     def __init__(self):
@@ -59,3 +52,9 @@ class Service:
             print('Query executed')
         except Exception as e:
             print('Query not executed', e)
+            
+    def close(self):
+        self.connection.disconnect()
+    
+    def __del__(self):
+        self.close()
