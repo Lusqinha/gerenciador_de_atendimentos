@@ -48,7 +48,7 @@ class Connection:
             
     def execute(self, query):
         try:
-            self.cursor.execute("".join(query), multi=True)
+            self.cursor.execute(f"USE {database}; {query}", multi=True)
             self.connection.commit()
             print('Query executed')
         except Exception as e:

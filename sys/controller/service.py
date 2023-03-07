@@ -8,7 +8,7 @@ class Service:
         self.connection = Connection(host, user, password, database)
         self.cursor = self.connection.connect()    
     
-    def create(self, cliente, categoria, status, descricao):
+    def create(self, cliente:int, categoria:int, status:int, descricao:str):
         query = """INSERT INTO ATENDIMENTO (cliente, categoria, status, descricao) VALUES ('{}', '{}', '{}', '{}')".format(cliente, categoria, status, descricao)"""
         
         try:
