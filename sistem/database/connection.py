@@ -20,6 +20,7 @@ class Connection:
         self.user = user
         self.password = password
         self.database = database
+        self.cursor = self.connect()
     
     def connect(self) -> Any:
         try:
