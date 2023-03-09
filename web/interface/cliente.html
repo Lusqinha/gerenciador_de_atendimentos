@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador de atendimentos</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/sistema.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    <script type="text/javascript" src="/eel.js"></script>
+    
+</head>
+<body>
+    <header>
+        <div>
+            <i class="devicon-zig-original"></i>
+            <h1>WTech - Atendimento</h1>
+        </div>
+        <div>
+            <nav>
+                <ul>
+                    <li><a href="atendimento.html">Atendimento</a></li>
+                    <li><a href="cliente.html">Cliente</a></li>
+                    <li><a href="categoria.html">Categoria</a></li>
+                    <li><a href="sistema.html">Sistema</a></li>
+                    <li><a href="status.html">Status</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="table_container">
+            <table id="myTable">
+                    <i class="devicon-codeigniter-plain" id="refresh_btn" onclick="read_list_cliente();alert('Tabela Atualizada')"></i>
+                    <thead>
+                        <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>Celular</th>
+                        <th>Email</th>
+                        <th>Acesso</th>
+                        <th>Sistema</th>
+                        </tr>
+                    </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </section>
+        <section class="form_container">
+            <form action="">
+                <div class="form_item">
+
+                    <label for="cli_name">CLIENTE<span>*</span></label>
+                    <input type="text" name="nome" id="cli_name" required>
+
+                </div>
+                <div class="form_item">
+
+                    <label for="cli_celular">CELULAR<span>*</span></label>
+                    <input type="text" name="celular" id="cli_celular" required>
+
+                </div>
+                <div class="form_item">
+
+                    <label for="cli_email">EMAIL<span>*</span></label>
+                    <input type="email" name="email" id="cli_email" required>
+
+                </div>
+                <div class="form_item">
+
+                    <label for="cli_acesso">ACESSO<span>*</span></label>
+                    <input type="text" name="acesso" id="cli_acesso" required>
+
+                </div>
+                <div class="form_item">
+
+                    <label for="cli_sistema">SISTEMA<span>*</span></label>
+                    <input type="number" name="sistema" id="cli_sistema" required>
+
+                </div>
+                <button onclick="cadastrarCliente()">Cadastrar</button>
+            </form>
+        </section>
+
+    </main>
+    <script src="../js/cliente.js"></script>
+</body>
+</html>

@@ -19,6 +19,7 @@ def cli_read_all():
     with db.connection():
         try:
             cli = []
+            # configurar peewee para retornar lista de listas
             for cliente in Cliente.select():
                 print(cliente.cli_nome)
                 cli.append(cliente.cli_nome)

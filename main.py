@@ -9,6 +9,6 @@ from sistem.controller.service import Service
 eel.init('web')
 
 
-eel.start('index.html', size=(800, 600))
+eel.start('index.html', size=(800, 600), mode='chrome')
 
 # Path: web\index.html

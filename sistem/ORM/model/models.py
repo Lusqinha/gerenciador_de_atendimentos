@@ -1,5 +1,5 @@
 from datetime import date
-from peewee import MySQLDatabase, Model, CharField, DateField, ForeignKeyField
+from peewee import MySQLDatabase, SqliteDatabase, Model, CharField, DateField, ForeignKeyField
 from dotenv import load_dotenv
 from os import getenv
 
@@ -10,11 +10,12 @@ password = getenv('DB_PASSWORD')
 database = getenv('DB_DATABASE')
 
 def set_db():
-    db = MySQLDatabase(database, user=user, password=password, host=host, port=3306, autorollback=True, autoconnect=True)
+    # db = MySQLDatabase(database, user=user, password=password, host=host, port=3306, autorollback=True, autoconnect=True)
+    
     
     return db
 
-db = set_db()
+db = SqliteDatabase('sistem.db')
 
 class Sistema(Model):
     sis_nome = CharField(max_length=50)

@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="../css/sistema.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
     <script type="text/javascript" src="/eel.js"></script>
-    <script src="../js/sistema.js"></script>
+    
 </head>
 <body>
     <header>
@@ -21,67 +21,40 @@
         <div>
             <nav>
                 <ul>
-                    <li><a href="interface/atendimento.html">Atendimento</a></li>
-                    <li><a href="interface/cliente.html">Cliente</a></li>
-                    <li><a href="interface/categoria.html">Categoria</a></li>
-                    <li><a href="interface/sistema.html">Sistema</a></li>
-                    <li><a href="interface/status.html">Status</a></li>
+                    <li><a href="atendimento.html">Atendimento</a></li>
+                    <li><a href="cliente.html">Cliente</a></li>
+                    <li><a href="categoria.html">Categoria</a></li>
+                    <li><a href="sistema.html">Sistema</a></li>
+                    <li><a href="status.html">Status</a></li>
                 </ul>
             </nav>
         </div>
     </header>
     <main>
         <section class="table_container">
-            <table>
-                <thead>
-                    <td>ID</td>
-                    <td>Nome</td>
-                </thead>
-                <tbody id="table_body">
-                    <tr>
-                        <td>1</td>
-                        <td>Nome</td>
-                    </tr>
+            <table id="myTable">
+                    <i class="devicon-codeigniter-plain" id="refresh_btn" onclick="read_table();alert('Tabela Atualizada')"></i>
+                    <thead>
+                        <tr>
+                        <th>ID</th>
+                        <th>Programa</th>
+                        </tr>
+                    </thead>
+                <tbody>
                 </tbody>
-
             </table>
-            <script>
-                const table = document.querySelector('table');
-                const tableBody = document.querySelector('#table_body');
-
-                let itens = listarSistemas();
-                console.log(itens);
-
-                for (let i = 0; i < itens.length; i++) {
-                    let tr = document.createElement('tr');
-                    let tdId = document.createElement('td');
-                    let tdNome = document.createElement('td');
-                    let tdAcoes = document.createElement('td');
-
-                    tdId.textContent = itens[i].id;
-                    tdNome.textContent = itens[i].nome;
-
-                    tr.appendChild(tdId);
-                    tr.appendChild(tdNome);
-                    tr.appendChild(tdAcoes);
-
-                    tableBody.appendChild(tr);
-                }
-                
-
-            </script>
-
         </section>
         <section class="form_container">
             <form action="">
                 <div class="form_item">
-                    <label for="sis_name">NOME</label>
-                    <input type="text" name="nome" id="sis_name">
+                    <label for="sis_name">NOME DO SISTEMA<span>*</span></label>
+                    <input type="text" name="nome" id="sis_name" required>
                     <button onclick="cadastrarSistema()">Cadastrar</button>
                 </div>
             </form>
         </section>
 
     </main>
+    <script src="../js/sistema.js"></script>
 </body>
 </html>

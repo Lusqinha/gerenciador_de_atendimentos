@@ -1,0 +1,152 @@
+.table_container{
+    width: 80%;
+    overflow: auto;
+    margin: 0 auto;
+    padding: 0;
+    border: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
+    background-color: #fff;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #000;
+    text-align: left;
+    vertical-align: middle;
+    line-height: 1.5;
+}
+
+#myTable{
+    width: 100%;
+    overflow: auto;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
+    background-color: #666;
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+    text-align: left;
+    vertical-align: middle;
+    line-height: 1.5;
+}
+
+#myTable thead tr th{
+    padding: 5px;
+    border: 1px solid rgb(0, 0, 0);
+    background-color: rgb(66, 63, 63);
+    font-weight: bold;
+    font-size: 3.2em;
+}
+
+#myTable tbody tr td{
+    padding: 5px;
+    border: 1px solid #000;
+}
+
+#myTable tbody tr td {
+    font-size: 2em;
+    text-transform: uppercase;
+}
+
+#myTable tbody tr:nth-child(even){
+    background-color: #444;
+}
+#myTable tbody tr:nth-child(odd){
+    background-color: #555;
+}
+
+#myTable tbody tr:hover{
+    background-color: #333;
+    color: #fff;
+}
+
+#refresh_btn{
+  font-size: 3em;
+  cursor: pointer;
+  margin: 0.3em;
+
+  
+}
+
+#refresh_btn:hover{
+  color: rgb(117, 11, 11);
+}
+
+
+/* form */
+/* make a modern form interface */
+
+form {
+  background-color: #fff; /* Cor de fundo do formulário */
+  border-radius: 8px; /* Borda arredondada */
+  padding: 1.5em; /* Espaçamento interno */
+  width: 80%; /* Largura do formulário */
+  margin: 5em auto; /* Centralizar o formulário */
+}
+
+form div{
+    margin: 2em 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+label {
+  display: block; /* Exibir o label como um bloco */
+  margin-bottom: 0.5em; /* Espaçamento inferior */
+  font-weight: bold; /* Negrito */
+  font-size: 2.2em; /* Tamanho da fonte */
+  font-family: 'Open Sans', sans-serif; /* Fonte do formulário */
+
+}
+
+label span{
+    font-size: 1.2em;
+    font-weight: normal;
+    color: rgb(121, 2, 2);
+}
+/* remove up n down marker */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Estilo para os campos do formulário */
+input[type="text"], input[type="number"], input[type="email"], input[type="password"] {
+  width: 70%; /* Largura total do campo */
+  padding: 0.5em 0.5em; /* Espaçamento interno */
+  border-radius: 4px; /* Borda arredondada */
+  border: none; /* Sem borda */
+  box-shadow: 0px 0px 5px #333; /* Sombra */
+    font-size: 2.2em; /* Tamanho da fonte */
+}
+
+input[type="text"]:focus {
+  outline: none; /* Retirar o outline do campo */
+    box-shadow: 0px 0px 5px #333; /* Sombra */
+}
+
+/* Estilo para o botão de enviar */
+button {
+  background-color: #333; /* Cor de fundo do botão */
+  color: #fff; /* Cor do texto do botão */
+  padding: 15px 20px; /* Espaçamento interno */
+  margin-top: 10em;
+  border: none; /* Sem borda */
+  border-radius: 4px; /* Borda arredondada */
+  cursor: pointer; /* Cursor de ponteiro */
+  transition: background-color 0.2s ease; /* Efeito de transição */
+  max-width: 50%;
+  align-self: center;
+  font-size: 1.2em; /* Tamanho da fonte */
+}
+
+/* Estilo para o hover do botão de enviar */
+button:hover {
+  background-color: #fff; /* Cor de fundo do botão */
+  color: #333; /* Cor do texto do botão */
+}
