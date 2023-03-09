@@ -9,8 +9,12 @@ user = getenv('DB_USER')
 password = getenv('DB_PASSWORD')
 database = getenv('DB_DATABASE')
 
+def set_db():
+    db = MySQLDatabase(database, user=user, password=password, host=host, port=3306, autorollback=True, autoconnect=True)
+    
+    return db
 
-db = MySQLDatabase(database, user=user, password=password, host=host, port=3306, autorollback=True)
+db = set_db()
 
 class Sistema(Model):
     sis_nome = CharField(max_length=50)
